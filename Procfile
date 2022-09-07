@@ -1,1 +1,1 @@
-web: gunicorn TO_DO_APP.wsgi
+web: gunicorn ecom.wsgi
