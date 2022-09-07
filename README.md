@@ -4,8 +4,6 @@ E-commerce space for buy or sell wearable items. Visit the [website]()
 
 ## User
 
----
-
 **Signup**
 
 ```curl
@@ -49,8 +47,6 @@ GET /api/user/logout/{user_uuid}/
 
 ## Category
 
----
-
 **Add Category**
 
 ```curl
@@ -79,8 +75,6 @@ Authorization: Bearer {access_token}
 
 ## Product
 
----
-
 **Add Product**
 
 ```curl
@@ -104,8 +98,6 @@ GET /api/product/
 
 ## Order
 
----
-
 **Add to cart**
 
 ```curl
@@ -124,8 +116,9 @@ GET /api/product/2/
 ```
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/38226564/188869457-ebaae476-cba7-4727-a9e0-6606a5b6cd7f.png">
+
 ```text
-Note: 
+Note:
 * Total amount is the product of (quantity ordered * price per item)
 * Product quantity availability updated automatically based on total number of order
 ```
