@@ -4,4 +4,4 @@ from django.http import JsonResponse
 
 # Create your views here.
 def home(request):
-    return JsonResponse({'info': 'Bewakoof.com', 'name': 'Sarada'})
+    return JsonResponse({'info': 'Bewakooof.com'})

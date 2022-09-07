@@ -27,7 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yp29aaore*e3)0svmpqnyx)2by5wt2#*7mhip32x6@ono6o*g&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -145,8 +148,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Custom Settings
+# Custom user model registration
 AUTH_USER_MODEL = 'user.CustomUser'
 
+# JWT Setting
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -154,8 +159,12 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'user_uuid'
 }
 
+# Disable browsable api
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+
+# Heroku setup
 django_heroku.settings(locals())
-# if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-#     DEBUG = True
-# else:
-#     DEBUG = False

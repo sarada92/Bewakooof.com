@@ -9,7 +9,7 @@ router.register(r'', CustomUserViewSet)
 
 urlpatterns = [
     path('login/', signin, name='signin'),
-    path('logout/<str:uuid>', signout, name='signout'),
+    path('logout/<str:uuid>/', signout, name='signout'),
     path('gettoken/', TokenObtainPairView.as_view()),
     path('refreshtoken/', TokenRefreshView.as_view()),
     path('verifytoken/', TokenVerifyView.as_view()),
