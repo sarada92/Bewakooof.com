@@ -155,7 +155,7 @@ SIMPLE_JWT = {
 }
 
 django_heroku.settings(locals())
-if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-    DEBUG = True
-else:
-    DEBUG = False
+# if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
+#     DEBUG = True
+# else:
+#     DEBUG = False
