@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 from datetime import timedelta
+import os
+import sys
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -153,7 +154,7 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'user_uuid'
 }
 
-django_heroku.settings(local())
+django_heroku.settings(locals())
 if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
     DEBUG = True
 else:
